@@ -2,7 +2,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, Text } from "recharts";
 
-export const Dashboard = ( {data, COLORS} ) => {
+export const Chart = ( {data, COLORS} ) => {
 
     const renderCustomizedLabel = ({
         cx,
