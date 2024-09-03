@@ -1,8 +1,6 @@
-
-import React from "react";
 import { PieChart, Pie, Cell, Text } from "recharts";
 
-export const Chart = ( {data, COLORS} ) => {
+const Chart = ( {data} ) => {
 
     const renderCustomizedLabel = ({
         cx,
@@ -10,7 +8,6 @@ export const Chart = ( {data, COLORS} ) => {
         midAngle,
         innerRadius,
         outerRadius,
-        percent,
         index,
         fill,
       }) => {
@@ -80,7 +77,7 @@ export const Chart = ( {data, COLORS} ) => {
           labelLine={false} // Disable the label line
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            <Cell key={`cell-${index}`} fill={entry.color} />
           ))}
         </Pie>
         <text
@@ -106,3 +103,5 @@ export const Chart = ( {data, COLORS} ) => {
       </PieChart>
     );
   };
+
+  export default Chart;
